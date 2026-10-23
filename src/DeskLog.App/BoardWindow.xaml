@@ -1,0 +1,17 @@
+<Window x:Class="DeskLog.App.BoardWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ Title="桌面任务记录板" Style="{StaticResource {x:Type Window}}" Width="360" Height="740" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True" Background="#F7F8F2" ShowInTaskbar="False" ShowActivated="False" UseLayoutRounding="True">
+ <Border Background="#F7F8F2" BorderBrush="#C4D0BD" BorderThickness="1" CornerRadius="12" Padding="22,20">
+  <Grid>
+   <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+   <Grid x:Name="DragHeader" Background="Transparent" Cursor="SizeAll" ToolTip="拖动这里移动任务板">
+    <StackPanel><TextBlock Text="WORKLOG / 工作记录" FontSize="10" Foreground="{StaticResource Muted}"/><StackPanel Orientation="Horizontal" Margin="0,10,0,0"><TextBlock x:Name="DateLabel" FontSize="34" FontWeight="Light"/><TextBlock x:Name="WeekLabel" VerticalAlignment="Bottom" Margin="12,0,0,7" Foreground="{StaticResource Muted}"/></StackPanel></StackPanel>
+    <Button Content="···" HorizontalAlignment="Right" VerticalAlignment="Top" Padding="7,0" Background="Transparent" FontSize="19" Cursor="Hand" Click="MenuClick" ToolTip="菜单" AutomationProperties.Name="任务板菜单"/>
+   </Grid>
+   <StackPanel Grid.Row="1"><Separator/><DockPanel Margin="0,0,0,10"><TextBlock Text="待完成" FontSize="16" FontWeight="SemiBold"/><TextBlock x:Name="PendingCount" HorizontalAlignment="Right" Foreground="{StaticResource Accent}" FontSize="15"/></DockPanel><TextBlock x:Name="WarningLabel" Visibility="Collapsed" Foreground="#90621F" TextWrapping="Wrap" Margin="0,0,0,10" FontSize="11"/></StackPanel>
+   <ScrollViewer Grid.Row="2" Padding="0,0,4,0"><StackPanel><TextBlock x:Name="PendingEmpty" Text="暂时没有待办。&#10;把下一件要做的事记在这里。" Foreground="{StaticResource Muted}" TextWrapping="Wrap" LineHeight="25" Margin="0,12,0,20"/><StackPanel x:Name="PendingList"/></StackPanel></ScrollViewer>
+   <Button Grid.Row="3" Content="＋  添加任务" Foreground="{StaticResource Accent}" Background="#E2EDDE" HorizontalContentAlignment="Center" Margin="0,12,0,0" Click="AddClick"/>
+   <StackPanel Grid.Row="4"><Separator/><DockPanel Margin="0,0,0,6"><TextBlock Text="最近完成" FontSize="14"/><TextBlock x:Name="RecentCount" HorizontalAlignment="Right" Foreground="{StaticResource Muted}" FontSize="11"/></DockPanel><TextBlock x:Name="RecentEmpty" Text="每一次完成，都会留在这里。" Foreground="{StaticResource Muted}" Margin="0,12,0,12" FontSize="12"/><ScrollViewer MaxHeight="218"><StackPanel x:Name="RecentList"/></ScrollViewer></StackPanel>
+   <Button Grid.Row="5" Background="Transparent" Padding="0,14,0,0" HorizontalContentAlignment="Stretch" Click="MonthClick"><DockPanel LastChildFill="False"><TextBlock Text="本月记录" Foreground="{StaticResource Accent}"/><TextBlock Text="查看  →" DockPanel.Dock="Right" Foreground="{StaticResource Muted}" FontSize="12"/></DockPanel></Button>
+  </Grid>
+ </Border>
+</Window>

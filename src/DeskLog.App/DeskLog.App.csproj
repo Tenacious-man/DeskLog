@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\DeskLog.ico</ApplicationIcon>
+    <AssemblyName>DeskLog</AssemblyName>
+    <Version>1.0.5</Version>
+    <Company>DeskLog</Company>
+    <Product>桌面任务记录板</Product>
+  </PropertyGroup>
+  <ItemGroup><ProjectReference Include="..\DeskLog.Core\DeskLog.Core.csproj" /></ItemGroup>
+  <ItemGroup><Resource Include="Assets\DeskLog.ico" /></ItemGroup>
+</Project>

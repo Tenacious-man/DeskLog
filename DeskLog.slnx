@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DeskLog.App/DeskLog.App.csproj" />
+    <Project Path="src/DeskLog.Core/DeskLog.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/DeskLog.Tests/DeskLog.Tests.csproj" />
+    <Project Path="tests/DeskLog.UiTests/DeskLog.UiTests.csproj" />
+  </Folder>
+</Solution>

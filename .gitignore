@@ -1,0 +1,15 @@
+**/bin/
+**/obj/
+artifacts/
+.vs/
+*.user
+
+# Local notes, backups, logs, and credentials
+*.db
+*.db-shm
+*.db-wal
+*.log
+.env
+.env.*
+!.env.example
+backups/
